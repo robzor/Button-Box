@@ -162,12 +162,16 @@ class ButtonBox_ColoursFieldType extends BaseOptionsFieldType
 
 			if ( !empty($option['default']) )
 			{
-				return $option['value'];
+				return array(
+					'value' => $option['value'],
+				);
 			}
 
 		}
 
-		return $options[0]['value'];
+		return array(
+			'value' => $options[0]['value'],
+		);
 
 	}
 
