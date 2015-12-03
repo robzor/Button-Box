@@ -1,9 +1,9 @@
 {%- set options = (options is defined ? options : []) %}
-{%- set value = (value is defined ? value : null) %}
+{%- set value = (value.value is defined ? value.value : null) %}
 {%- set hasOptgroups = false -%}
 <div id="{{ name }}" class="buttonbox-colours">
 
-  <select{%- if name is defined %} name="{{ name }}"{% endif %}>
+ <select{%- if name is defined %} name="{{ name }}"{% endif %}>
     {% for key, option in options %}
       {% set optionLabel = (option.label is defined ? option.label : option) %}
       {% set optionValue = (option.value is defined ? option.value : key) %}

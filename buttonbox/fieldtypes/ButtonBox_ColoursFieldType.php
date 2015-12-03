@@ -108,6 +108,16 @@ class ButtonBox_ColoursFieldType extends BaseOptionsFieldType
 		));
 	}
 
+	public function prepValue($value)
+	{
+		$model = new ButtonBox_ColoursFieldModel;
+
+		$model->setAttribute('value', $value);
+		$model->getExtraAttributes($this->getSettings()->getAttribute('options'), $value);
+
+		return $model;
+	}
+
 
 
 	// Protected Methods
