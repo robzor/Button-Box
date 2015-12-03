@@ -32,4 +32,12 @@ class ButtonBox_ColoursFieldModel extends BaseModel
 			'value' => AttributeType::String,
 		);
 	}
+
+	/**
+	 * @return string
+	 */
+	public function __toString()
+	{
+		return (string) $this->value;
+	}
 }
